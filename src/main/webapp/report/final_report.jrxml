@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.4.final using JasperReports Library version 6.0.4  -->
+<!-- 2021-03-24T23:54:52 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="final_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d4131179-8cc8-47a6-88f4-17152f5edc2c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="rays"/>
+	<queryString>
+		<![CDATA[SELECT ROLL_NO,NAME,PHYSICS,CHEMISTRY,MATHS,(PHYSICS+CHEMISTRY+MATHS) AS TOTAL,ROUND((((PHYSICS+CHEMISTRY+MATHS)*100)/300), 2) AS PERCENTAGE FROM st_marksheet WHERE PHYSICS>35 AND CHEMISTRY>35 AND MATHS>35 ORDER BY TOTAL DESC LIMIT 0,10]]>
+	</queryString>
+	<field name="ROLL_NO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PHYSICS" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CHEMISTRY" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MATHS" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TOTAL" class="java.lang.Long"/>
+	<field name="PERCENTAGE" class="java.math.BigDecimal"/>
+	<group name="ROLL_NO">
+		<groupExpression><![CDATA[$F{ROLL_NO}]]></groupExpression>
+	</group>
+	<group name="NAME">
+		<groupExpression><![CDATA[$F{NAME}]]></groupExpression>
+	</group>
+	<group name="PHYSICS">
+		<groupExpression><![CDATA[$F{PHYSICS}]]></groupExpression>
+	</group>
+	<group name="CHEMISTRY">
+		<groupExpression><![CDATA[$F{CHEMISTRY}]]></groupExpression>
+	</group>
+	<group name="MATHS">
+		<groupExpression><![CDATA[$F{MATHS}]]></groupExpression>
+	</group>
+	<group name="TOTAL">
+		<groupExpression><![CDATA[$F{TOTAL}]]></groupExpression>
+	</group>
+	<group name="PERCENTAGE">
+		<groupExpression><![CDATA[$F{PERCENTAGE}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="131" y="10" width="289" height="64" uuid="475e319f-7e94-41bc-a421-5810dbbc8f75"/>
+				<textElement textAlignment="Center">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marksheet merit list]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="dc24de1c-7d4c-42c3-9596-0afce1826a8b"/>
+				<text><![CDATA[ROLL_NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="0" width="100" height="30" uuid="b99b5889-cb3c-4365-bb41-f002993c199d"/>
+				<text><![CDATA[NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="0" width="100" height="30" uuid="62f622f3-1664-43a3-986d-49d4a3dda057"/>
+				<text><![CDATA[PHYSICS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="0" width="100" height="30" uuid="33fe9abe-e9a1-486f-9ca3-e455e1de9d28"/>
+				<text><![CDATA[CHEMISTRY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="0" width="100" height="30" uuid="5502532f-cc44-4d73-9f9b-720d326190eb"/>
+				<text><![CDATA[MATHS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="100" height="30" uuid="bae26b8b-123f-4b21-b2f3-584df165d343"/>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="491" y="0" width="100" height="30" uuid="2b5f185b-2689-42ac-b633-d4cc8b85e171"/>
+				<text><![CDATA[PERCENTAGE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="10" width="100" height="30" uuid="19702ac3-960c-486e-8ac5-d800834907cd"/>
+				<textFieldExpression><![CDATA[$F{ROLL_NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="10" width="100" height="30" uuid="a2d5aa95-1f5d-4f51-8f4c-1d529eff0d02"/>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="10" width="100" height="30" uuid="794ceae6-8adb-4c19-ae6b-c257e30076f2"/>
+				<textFieldExpression><![CDATA[$F{PHYSICS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="10" width="100" height="30" uuid="e6cd7610-7e6a-4514-8241-306815b4d467"/>
+				<textFieldExpression><![CDATA[$F{CHEMISTRY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="10" width="100" height="30" uuid="e925a112-3d97-4e3c-8438-7b92fab20ba2"/>
+				<textFieldExpression><![CDATA[$F{MATHS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="10" width="100" height="30" uuid="ab1304f6-debb-4263-991d-630e5b1cf745"/>
+				<textFieldExpression><![CDATA[$F{TOTAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="491" y="10" width="100" height="30" uuid="d93a469e-1704-440c-b150-032158cb950c"/>
+				<textFieldExpression><![CDATA[$F{PERCENTAGE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
